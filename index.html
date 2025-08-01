@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gayatri's Birthday 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="overlay">
+    <h1 id="message">Welcome to Gayu's Birthday 🎉</h1>
+    <img src="assets/first.gif" alt="Intro GIF" id="introGif" />
+    <button id="startBtn">Let's Begin 💖</button>
+    <button id="lightBtn" class="hidden">Turn on Lights 💡</button>
+  </div>
+
+  <div id="main" class="hidden">
+    <div class="centered">
+      <img id="bulbs" src="assets/bulbs.png" class="hidden" />
+      <img id="balloons" src="assets/balloons.gif" class="hidden" />
+
+      <div id="photoFrame" class="hidden">
+        <img src="assets/your-photo.jpg" alt="You two" />
+      </div>
+
+      <img id="cake" src="assets/cake-cat.png" class="hidden" />
+
+      <div id="greeting" class="hidden">
+        <h2>Happy Birthday Gayatri ❤️</h2>
+        <p>You bring light into my life every day. I love you forever!</p>
+      </div>
+
+      <audio id="bgMusic" src="assets/music.mp3" preload="auto"></audio>
+      <button id="nextBtn" class="hidden">Next ➡️</button>
+    </div>
+  </div>
+
+  <!-- Emoji Balloons Container -->
+  <div id="emojiContainer"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

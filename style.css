@@ -1,0 +1,187 @@
+/* Reset and Box Model */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styling */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: background-color 2s, color 2s;
+}
+
+/* Containers */
+#overlay,
+.centered {
+  text-align: center;
+  padding: 20px;
+}
+
+button {
+  background: #ff4081;
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1rem;
+  border-radius: 10px;
+  margin: 15px 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: normal;
+  text-align: center;
+}
+
+button:hover {
+  background: #e91e63;
+}
+
+/* Images */
+img {
+  max-width: 90%;
+  max-height: 300px;
+  margin: 20px auto;
+  display: block;
+  transition: opacity 1.5s ease, transform 0.5s ease;
+}
+
+/* Visibility Control */
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  position: static;
+  height: auto;
+}
+
+/* Photo Frame */
+#photoFrame {
+  width: 90%;
+  max-width: 300px;
+  margin: 20px auto;
+  border: 8px solid white;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #ff4081;
+  transition: transform 0.5s ease;
+}
+
+#photoFrame img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+/* Animation for dancing effect */
+@keyframes dance {
+  0% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(3deg) scale(1.05); }
+  50% { transform: rotate(-3deg) scale(1.05); }
+  75% { transform: rotate(3deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.dance {
+  animation: dance 0.4s infinite;
+}
+
+/* Greeting Text */
+#greeting h2 {
+  font-size: 2rem;
+  color: #ff4081;
+  margin-bottom: 10px;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+#greeting p {
+  font-size: 1.1rem;
+  max-width: 80%;
+  margin: auto;
+}
+
+/* Glowing Text Animation */
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff4081; }
+  to { text-shadow: 0 0 20px #ff4081, 0 0 30px #ff4081; }
+}
+
+/* Floating Emoji Balloons */
+#emojiContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.balloon-emoji {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp 8s linear infinite;
+  user-select: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  #greeting h2 {
+    font-size: 1.5rem;
+  }
+
+  #greeting p {
+    font-size: 1rem;
+  }
+
+  img {
+    max-height: 250px;
+  }
+
+  #photoFrame {
+    width: 95%;
+  }
+
+  .centered {
+    padding: 10px;
+  }
+}
